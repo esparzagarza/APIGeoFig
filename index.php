@@ -23,6 +23,7 @@ $request = json_decode($jsondata, TRUE);
 $succes = true;
 $httpStatusCode = 200;
 $response = array();
+$response['test'] = $_SERVER['REQUEST_METHOD'];
 
 // HTTP Method
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
