@@ -23,7 +23,6 @@ $request = json_decode($jsondata, TRUE);
 $succes = true;
 $httpStatusCode = 200;
 $response = array();
-$response['test'] = $_SERVER['REQUEST_METHOD'];
 
 // HTTP Method
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -57,6 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     } else $response = Helpers::formatResponse($httpStatusCode, $succes, "Nombre de Figura no válido", $figure);
 } else $response = Helpers::formatResponse($httpStatusCode, $succes, "Verbo nop válido", null);
+
+
+$response['test'] = $_SERVER['REQUEST_METHOD'];
 
 // Exit
 if (isset($figure)) unset($figure);
