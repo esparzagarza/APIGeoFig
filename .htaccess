@@ -1,3 +1,12 @@
+# Fix for Apache AUTHORIZATION http header as it is stripped by default for security and should be
+# enabled explicity when needed
+SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0
+Options -Indexes
+
+RewriteEngine On    # Turn on the rewriting engine
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
 RewriteCond %{HTTPS} !=on
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
