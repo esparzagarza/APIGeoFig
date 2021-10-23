@@ -17,7 +17,7 @@
             "email": "isc.pedroesparza@gmail.com"
         }
     ],
-    "require-dev": {
+    "require": {
         "phpunit/phpunit": "^9.5"
     }
 }
