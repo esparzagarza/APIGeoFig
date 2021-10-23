@@ -1,6 +1,6 @@
 # Fix for Apache AUTHORIZATION http header as it is stripped by default for security and should be
 # enabled explicity when needed
-#SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0
+SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0
 Options -Indexes
 
 RewriteEngine On    # Turn on the rewriting engine
