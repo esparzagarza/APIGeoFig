@@ -3,7 +3,7 @@
 namespace App;
 
 // Cors
-header("Access-Control-Allow-Origin: *");
+header('Access-Control-Allow-Origin: *');
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Max-Age: 3600");
@@ -55,10 +55,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $response = Helpers::formatResponse($httpStatusCode, $succes, 'proceso completo', $figure);
         }
     } else $response = Helpers::formatResponse($httpStatusCode, $succes, "Nombre de Figura no válido", $figure);
-} else $response = Helpers::formatResponse($httpStatusCode, $succes, "Verbo nop válido", null);
+} else $response = Helpers::formatResponse($httpStatusCode, $succes, "Verbo nope válido", null);
 
 
-$response['test'] = $_SERVER['REQUEST_METHOD'];
+$response['test'] = $request;
 
 // Exit
 if (isset($figure)) unset($figure);
