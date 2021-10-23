@@ -58,9 +58,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 } else $response = Helpers::formatResponse($httpStatusCode, $succes, "Verbo no válido", null);
 
 
-$response['method'] = $_SERVER['REQUEST_METHOD'];
-$response['request'] = $request;
-
 // Exit
 if (isset($figure)) unset($figure);
 Helpers::returnToAction($response);
