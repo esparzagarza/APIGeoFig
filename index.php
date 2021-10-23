@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $response = Helpers::formatResponse($httpStatusCode, $succes, 'proceso completo', $figure);
         }
     } else $response = Helpers::formatResponse($httpStatusCode, $succes, "Nombre de Figura no válido", $figure);
-} else $response = Helpers::formatResponse($httpStatusCode, $succes, "Verbo no válido", null);
+} else $response = Helpers::formatResponse($httpStatusCode, $succes, "Verbo nop válido", null);
 
 // Exit
 if (isset($figure)) unset($figure);
